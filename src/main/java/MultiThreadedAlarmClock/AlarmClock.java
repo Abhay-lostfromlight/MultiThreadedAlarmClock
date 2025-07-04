@@ -1,24 +1,13 @@
 package MultiThreadedAlarmClock;
- import java.time.LocalDateTime;
+
 public class AlarmClock {
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
-
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
-    }
-
-    public String getReminder() {
-        return reminder;
-    }
-
-    public void setReminder(String reminder) {
-        this.reminder = reminder;
-    }
-
-    private LocalDateTime dateTime;
-    private String reminder;
+  /*
+   * alarm can be set by multiple clients
+   * it will have 5 event loops
+   *  clients are multiple threads
+   * alarm max limit is 5
+   * shared resource - list of alarms
+   */
 
 
 }
