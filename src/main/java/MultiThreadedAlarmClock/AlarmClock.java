@@ -18,7 +18,7 @@ public class AlarmClock {
 
     public void pushAlarm(Alarm alarm) {    //main alarm thread (event loop)
       synchronized (this) {
-        while(alarms.size() == maxAlarms) {
+        while(alarms.size() == maxAlarms) { // Check if the alarm list is full
           try {
             wait(); // Wait until an alarm is removed
           }catch (InterruptedException e) {
@@ -26,15 +26,15 @@ public class AlarmClock {
              return;
           }
         }
-        if((alarm.getDateTime().isAfter(LocalDateTime.now()))) {
-            alarms.add(alarm);
+        if((alarm.getDateTime().isAfter(LocalDateTime.now()))) {    // Check if the alarm time is in the future
+            alarms.add(alarm);  //if it's in the future, add it to the list
             notifyAll();
         }
       }
     }
-    public void startAlarming() {
+    public void startAlarming() {   // event loop to process alarms
         synchronized (this) {
-            while (alarms.isEmpty()) {
+            while (alarms.isEmpty()) {  // until alarms is empty
                 try {
                     wait(); // Wait until an alarm is added
                 } catch (InterruptedException e) {

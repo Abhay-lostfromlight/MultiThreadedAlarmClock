@@ -2,7 +2,7 @@ package MultiThreadedAlarmClock;
 import java.time.LocalDateTime;
 
 public class Alarm {
-    public Alarm(LocalDateTime dateTime, String reminder) {
+    public Alarm(LocalDateTime dateTime, String reminder) { //alarm constructor
         this.dateTime = dateTime;
         this.reminder = reminder;
     }
