@@ -13,7 +13,7 @@ package MultiThreadedAlarmClock;
 //}
 import java.time.LocalDateTime;
 
-public class alarm {
+public class Alarm {
     public LocalDateTime getDateTime() {
         return dateTime;
     }
