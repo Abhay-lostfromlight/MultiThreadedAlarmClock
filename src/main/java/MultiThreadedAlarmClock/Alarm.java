@@ -1,19 +1,12 @@
 package MultiThreadedAlarmClock;
-
-//public class alarm {
-//    public void startAlarming(){
-//        synchronized (this){
-//            while(alarm.isEmpty()){
-//                try{
-//
-//                }
-//            }
-//        }
-//    }
-//}
 import java.time.LocalDateTime;
 
 public class Alarm {
+    public Alarm(LocalDateTime dateTime, String reminder) {
+        this.dateTime = dateTime;
+        this.reminder = reminder;
+    }
+
     public LocalDateTime getDateTime() {
         return dateTime;
     }
